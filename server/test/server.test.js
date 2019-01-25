@@ -82,7 +82,7 @@ describe('GET /todos/:id', () => {
             .expect((res) => {
                 expect(res.body.todo.text).toBe(todos[0].text);
             })
-            .end(done)
+            .end(done);
     });
 
     it('Should return 404 if todo not find', (done) => {
@@ -92,7 +92,7 @@ describe('GET /todos/:id', () => {
         request(app)
             .get(`/todos/${id}`)
             .expect(404)
-            .end(done)
+            .end(done);
     });
 
     it('Should return 404 if todo not find', (done) => {
