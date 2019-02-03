@@ -127,11 +127,10 @@ app.post('/users/login', (req, res) => {
 });
 
 app.delete('/users/me/token', authenticate, (req, res) => {
-    // return req.user;
     req.user.removeToken(req.token).then(() => {
-        res.send(200);
+        res.sendStatus(200);
     }).catch(() => {
-        res.send(400);
+        res.sendStatus(400);
     });
 });
 
